@@ -1,0 +1,91 @@
+.ms-home-preview {
+    aspect-ratio: 16/9;
+    width: 100%;
+    background-image: url("../img/c83d22e0a38c642c97a3255e76d9c6f72a158902.png");
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.ms-home-preview::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(270deg, rgba(1, 48, 65, 0.65) 0%, rgba(1, 48, 65, 0.13) 27.52%, rgba(1, 48, 65, 0.65) 100%);
+}
+
+.ms-home-preview__border {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+}
+
+.ms-preview-container {
+    max-width: 1244px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.home-preview-swiper {
+    overflow: hidden;
+    padding: 0 167px;
+}
+
+.ms-swiper-btn {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    cursor: pointer;
+}
+
+.ms-swiper-prev {
+    left: 0;
+}
+
+.ms-swiper-next {
+    right: 0;
+}
+
+.ms-main-title {
+    color: #fff;
+    font: 800 75px/1 var(--font-n);
+}
+
+.ms-main-title strong {
+    color: var(--blue);
+}
+
+.ms-home-preview-title {
+    margin-bottom: 45px;
+}
+
+.ms-transparent-link {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-inline-start: 25px;
+    padding-inline-end: 7px;
+    color: #fff;
+    font: 700 16px/1 var(--font-n);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    border-radius: 50px;
+    border: 1px solid #fff;
+    width: max-content;
+    height: 55px;
+}
+
+.ms-transparent-link-arrow-container {
+    aspect-ratio: 1/1;
+    height: 100%;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}

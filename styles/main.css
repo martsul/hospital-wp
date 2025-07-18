@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Hebrew:wght@100..900&display=swap');
+
+:root {
+    --font-m: "Montserrat", sans-serif;
+    --font-n: "Montserrat", sans-serif;
+    --blue: #9EE6FF;
+}
+
+body {
+    direction: rtl;
+}

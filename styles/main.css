@@ -95,6 +95,10 @@ body {
     font: 700 18px/1 var(--font-n);
 }
 
+.ms-normal-bold-font-m {
+    font: 700 18px/1 var(--font-m);
+}
+
 .ms-large-normal-font-n {
     font: 700 20px/1.1 var(--font-n);
     color: #fff;

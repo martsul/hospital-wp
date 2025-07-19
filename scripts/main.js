@@ -27,3 +27,19 @@ const homeNewsSwiper = new Swiper(".swiper-main-news", {
         el: ".swiper-main-news-pagination",
     },
 });
+const homeVideoSwiper = new Swiper(".swiper-main-video", {
+    slidesPerView: 4,
+
+    spaceBetween: 20,
+
+    loop: true,
+
+    navigation: {
+        nextEl: ".swiper-main-video-button-next",
+        prevEl: ".swiper-main-video-button-prev",
+    },
+
+    pagination: {
+        el: ".swiper-main-video-pagination",
+    },
+});

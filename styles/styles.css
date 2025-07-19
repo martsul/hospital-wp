@@ -148,7 +148,7 @@
     width: 100%;
 }
 
-.swiper-main-news {
+.swiper-main-news, .swiper-main-articles {
     padding: 0 40px;
 }
 

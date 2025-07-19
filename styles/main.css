@@ -346,3 +346,35 @@ body {
     position: relative;
     z-index: 1;
 }
+
+.ms-blue-section {
+    background: linear-gradient(90deg, #00739c 0%, #005c7d 100%);
+}
+
+.ms-blue-section .ms-title {
+    color: #fff;
+}
+
+.ms-blue-section .ms-title::before {
+    background: #fff;
+}
+
+.ms-blue-section .ms-news-card-title {
+    color: #fff;
+}
+
+.ms-blue-section .ms-news-card-date {
+    color: #7fb4c7;
+}
+
+.ms-blue-section .ms-news-card-link {
+    color: #E5E7EB;
+}
+
+.ms-blue-section .swiper-pagination-bullet {
+    background: #fff;
+}
+
+.ms-blue-section .swiper-pagination-bullet-active {
+    background: #ACACAC;
+}

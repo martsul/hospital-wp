@@ -61,3 +61,21 @@ const homeVideoSwiper = new Swiper(".swiper-main-video", {
         el: ".swiper-main-video-pagination",
     },
 });
+
+const videoModal = document.querySelector(".ms-modal");
+
+const closeVideoModal = (event) => {
+    event.target.closest(".ms-modal")?.classList.remove("active");
+};
+
+const openVideoModal = () => {
+    videoModal.classList.add("active");
+};
+
+document.body.addEventListener("click", (event) => {
+    if (event.target.closest(".swiper-slide")) {
+        openVideoModal();
+    } else if (event.target.closest(".ms-modal-close")) {
+        closeVideoModal(event);
+    }
+});

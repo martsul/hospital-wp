@@ -224,7 +224,6 @@ body {
 .ms-swiper {
     padding-bottom: 60px !important;
     position: relative;
-    overflow: hidden;
 }
 
 .ms-swiper-pagination {
@@ -285,6 +284,10 @@ body {
     font: 600 16px/1 var(--font-m);
 }
 
+.ms-video-card {
+    cursor: pointer;
+}
+
 .ms-video-card-img-container {
     position: relative;
     border-radius: 15px;
@@ -317,7 +320,6 @@ body {
 
 .ms-video-card-play-container {
     position: absolute;
-    cursor: pointer;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -381,4 +383,36 @@ body {
 
 .ms-blue-section .swiper-pagination-bullet-active {
     background: #ACACAC;
+}
+
+.ms-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s ease;
+    background: #000000b2;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ms-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+body:has(.ms-modal.active) {
+    overflow: hidden;
+}
+
+.ms-modal-close {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    cursor: pointer;
 }

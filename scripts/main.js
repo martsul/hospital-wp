@@ -36,7 +36,6 @@ const homeArticlesSwiper = new Swiper(".swiper-main-articles", {
     spaceBetween: 40,
 
     loopAdditionalSlides: 1,
-
     loop: true,
 
     navigation: {
@@ -79,7 +78,7 @@ const openVideoModal = () => {
 };
 
 document.body.addEventListener("click", (event) => {
-    if (event.target.closest(".swiper-slide")) {
+    if (event.target.closest(".ms-video-card")) {
         openVideoModal();
     } else if (event.target.closest(".ms-modal-close")) {
         closeVideoModal(event);

@@ -18,6 +18,8 @@ const homeNewsSwiper = new Swiper(".swiper-main-news", {
 
     loop: true,
 
+    loopAdditionalSlides: 1,
+
     navigation: {
         nextEl: ".swiper-main-news-button-next",
         prevEl: ".swiper-main-news-button-prev",
@@ -32,6 +34,8 @@ const homeArticlesSwiper = new Swiper(".swiper-main-articles", {
     slidesPerView: 3,
 
     spaceBetween: 40,
+
+    loopAdditionalSlides: 1,
 
     loop: true,
 
@@ -49,6 +53,8 @@ const homeVideoSwiper = new Swiper(".swiper-main-video", {
     slidesPerView: 4,
 
     spaceBetween: 20,
+
+    loopAdditionalSlides: 1,
 
     loop: true,
 

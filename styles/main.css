@@ -16,7 +16,7 @@ html {
 }
 
 body {
-    direction: rtl;
+    /* direction: rtl; */
 }
 
 .ms-section {
@@ -415,4 +415,8 @@ body:has(.ms-modal.active) {
     left: 15px;
     top: 15px;
     cursor: pointer;
+}
+
+.ms-section-swiper {
+    overflow: hidden;
 }

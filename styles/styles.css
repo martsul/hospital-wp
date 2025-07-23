@@ -208,6 +208,12 @@
 .ms-news-card,
 .ms-video-card {
     opacity: 0.2;
+    transition: opacity 0.2s ease;
+}
+
+.ms-video-card {
+    cursor: default;
+    pointer-events: none;
 }
 
 .ms-news-card.swiper-slide-active,
@@ -215,6 +221,16 @@
 .ms-news-card.swiper-slide-next + *,
 .ms-video-card.swiper-slide-active,
 .ms-video-card.swiper-slide-next,
-.ms-video-card.swiper-slide-next + *, .ms-video-card.swiper-slide-next + * + * {
+.ms-video-card.swiper-slide-next + *,
+.ms-video-card.swiper-slide-next + * + * {
     opacity: 1;
+}
+
+
+.ms-video-card.swiper-slide-active,
+.ms-video-card.swiper-slide-next,
+.ms-video-card.swiper-slide-next + *,
+.ms-video-card.swiper-slide-next + * + * {
+    cursor: pointer;
+    pointer-events: all;
 }

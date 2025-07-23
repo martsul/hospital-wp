@@ -13,6 +13,7 @@ const homePreviewSwiper = new Swiper(".home-preview-swiper", {
 
 const homeNewsSwiper = new Swiper(".swiper-main-news", {
     slidesPerView: 3,
+    initialSlide: 2,
 
     spaceBetween: 40,
 
@@ -27,11 +28,13 @@ const homeNewsSwiper = new Swiper(".swiper-main-news", {
 
     pagination: {
         el: ".swiper-main-news-pagination",
+        clickable: true,
     },
 });
 
 const homeArticlesSwiper = new Swiper(".swiper-main-articles", {
     slidesPerView: 3,
+    initialSlide: 2,
 
     spaceBetween: 40,
 
@@ -45,11 +48,13 @@ const homeArticlesSwiper = new Swiper(".swiper-main-articles", {
 
     pagination: {
         el: ".swiper-main-news-pagination",
+        clickable: true,
     },
 });
 
 const homeVideoSwiper = new Swiper(".swiper-main-video", {
     slidesPerView: 4,
+    initialSlide: 2,
 
     spaceBetween: 20,
 
@@ -64,6 +69,7 @@ const homeVideoSwiper = new Swiper(".swiper-main-video", {
 
     pagination: {
         el: ".swiper-main-video-pagination",
+        clickable: true,
     },
 });
 

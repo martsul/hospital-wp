@@ -109,7 +109,7 @@ body {
 }
 
 .ms-white-f-opacity-font {
-    color: #FFFFFF80;
+    color: #ffffff80;
 }
 
 .ms-blue-transparent-btn {
@@ -129,6 +129,12 @@ body {
     top: 50%;
     transform: translate(0, -50%);
     z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ms-aside.active {
+    opacity: 1;
 }
 
 .ms-aside-left {
@@ -382,7 +388,7 @@ body {
 }
 
 .ms-blue-section .ms-news-card-link {
-    color: #E5E7EB;
+    color: #e5e7eb;
 }
 
 .ms-blue-section .swiper-pagination-bullet {
@@ -390,7 +396,7 @@ body {
 }
 
 .ms-blue-section .swiper-pagination-bullet-active {
-    background: #ACACAC;
+    background: #acacac;
 }
 
 .ms-modal {
@@ -401,7 +407,7 @@ body {
     height: 100vh;
     opacity: 0;
     visibility: hidden;
-    transition: .2s ease;
+    transition: 0.2s ease;
     background: #000000b2;
     z-index: 10;
     display: flex;
@@ -448,4 +454,41 @@ body:has(.ms-modal.active) {
 .ms-footer-links {
     display: flex;
     gap: 15px;
+}
+
+.ms-font-center {
+    text-align: center;
+}
+
+.ms-font-white {
+    color: #fff;
+}
+
+.ms-flip-card {
+    perspective: 1000px;
+}
+
+.ms-flip-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    display: inline-block;
+}
+
+.ms-flip-card:hover .ms-flip-wrapper {
+    transform: rotateY(180deg);
+}
+
+.ms-flip-front,
+.ms-flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.ms-flip-back {
+    transform: rotateY(180deg); 
 }

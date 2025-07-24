@@ -78,10 +78,38 @@ class HomePage {
     #previewVideos = Array.from(
         document.querySelectorAll(".home-preview__video")
     );
+    #asides = document.querySelectorAll(".ms-aside ");
+    #previewSection = document.querySelector(".ms-home-preview");
 
     constructor() {
         this.#startStopVideo(0);
         this.#initHandlers();
+        this.#asideObserver();
+    }
+
+    #asideObserver() {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    console.log(entry.isIntersecting)
+                    if (entry.isIntersecting) {
+                        this.#hideAsides();
+                    } else {
+                        this.#showAsides();
+                    };
+                });
+            },
+            { threshold: 0.1 }
+        );
+        observer.observe(this.#previewSection);
+    }
+
+    #showAsides() {
+        this.#asides.forEach((a) => a.classList.add("active"));
+    }
+
+    #hideAsides() {
+        this.#asides.forEach((a) => a.classList.remove("active"));
     }
 
     #initHandlers() {
@@ -122,7 +150,7 @@ class HomePage {
 
     #closeVideoModal(event) {
         event.target.closest(".ms-modal")?.classList.remove("active");
-        this.#videoModal.querySelector("iframe").remove()
+        this.#videoModal.querySelector("iframe").remove();
     }
 
     #openVideoModal(slide) {
@@ -131,7 +159,7 @@ class HomePage {
     }
 
     #createIframe(slide) {
-        const videoLink = this.#parseVideoLink(slide.dataset.link)
+        const videoLink = this.#parseVideoLink(slide.dataset.link);
         const iframe = document.createElement("iframe");
         iframe.src = videoLink;
         iframe.classList.add("ms-video-modal-iframe");
@@ -140,7 +168,7 @@ class HomePage {
 
     #parseVideoLink(link) {
         const id = link.split("=").slice(-1)[0];
-        return `https://www.youtube.com/embed/${id}`
+        return `https://www.youtube.com/embed/${id}`;
     }
 }
 

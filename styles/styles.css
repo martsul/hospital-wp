@@ -63,14 +63,32 @@
 }
 
 .main-points__card {
+    aspect-ratio: 1/1;
+}
+
+.main-points__card .ms-flip-wrapper {
+    border-radius: 22px;
+}
+
+.main-points__card .ms-flip-front,
+.main-points__card .ms-flip-back {
     display: flex;
     flex-direction: column;
     gap: 7px;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
     padding: 25px 20px 20px;
-    background: #fff;
     border-radius: 22px;
+}
+
+.main-points__card .ms-flip-front {
     background: #fff;
+}
+
+.main-points__card .ms-flip-back {
+    background: var(--blue);
 }
 
 .main-points__card-svg {

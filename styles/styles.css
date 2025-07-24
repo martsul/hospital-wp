@@ -248,3 +248,24 @@
     cursor: pointer;
     pointer-events: all;
 }
+
+.swiper-main-news-button-next {
+    right: 16px;
+}
+
+.swiper-main-news-button-prev {
+    left: 16px;
+}
+
+.swiper-main-news .ms-swiper-btn,
+.swiper-main-articles .ms-swiper-btn {
+    transform: translate(0, calc(-50% - 65px));
+}
+
+.swiper-main-video-button-next {
+    right: 5px;
+}
+
+.swiper-main-video-button-prev {
+    left: 5px;
+}

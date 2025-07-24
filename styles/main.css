@@ -82,7 +82,7 @@ body {
     flex-shrink: 0;
 }
 
-.ms-small-container {
+.ms-container--small {
     max-width: 968px;
     margin: 0 auto;
 }
@@ -91,24 +91,24 @@ body {
     box-shadow: 0px 77px 46px 0px #0000000d;
 }
 
-.ms-normal-bold-font-n {
+.ms-font--normal-bold-n {
     font: 700 18px/1 var(--font-n);
 }
 
-.ms-normal-bold-font-m {
+.ms-font--normal-bold-m {
     font: 700 18px/1 var(--font-m);
 }
 
-.ms-large-normal-font-n {
+.ms-font--large-normal-n {
     font: 700 20px/1.1 var(--font-n);
     color: #fff;
 }
 
-.ms-small-normal-bold-m {
+.ms-font--small-normal-bold-m {
     font: 500 16px/1 var(--font-m);
 }
 
-.ms-white-f-opacity-font {
+.ms-font--white-f-opacity {
     color: #ffffff80;
 }
 
@@ -137,11 +137,11 @@ body {
     opacity: 1;
 }
 
-.ms-aside-left {
+.ms-aside--left {
     left: 0;
 }
 
-.ms-aside-right {
+.ms-aside--right {
     right: 0;
 }
 
@@ -165,11 +165,11 @@ body {
     max-width: 70px;
 }
 
-.ms-aside-right .ms-aside-link {
+.ms-aside--right .ms-aside-link {
     border-radius: 15px 0 0 15px;
 }
 
-.ms-aside-left .ms-aside-link {
+.ms-aside--left .ms-aside-link {
     border-radius: 0 15px 15px 0;
 }
 
@@ -225,7 +225,7 @@ body {
     color: var(--blue);
 }
 
-.ms-section-grey {
+.ms-section--grey {
     background: var(--light-grey);
 }
 
@@ -328,7 +328,7 @@ body {
     height: 100%;
 }
 
-.swiper-main-video {
+.ms-swiper-main-video {
     padding: 0 20px;
 }
 
@@ -367,35 +367,35 @@ body {
     z-index: 1;
 }
 
-.ms-blue-section {
+.ms-section--blue {
     background: linear-gradient(90deg, #00739c 0%, #005c7d 100%);
 }
 
-.ms-blue-section .ms-title {
+.ms-section--blue .ms-title {
     color: #fff;
 }
 
-.ms-blue-section .ms-title::before {
+.ms-section--blue .ms-title::before {
     background: #fff;
 }
 
-.ms-blue-section .ms-news-card-title {
+.ms-section--blue .ms-news-card-title {
     color: #fff;
 }
 
-.ms-blue-section .ms-news-card-date {
+.ms-section--blue .ms-news-card-date {
     color: #7fb4c7;
 }
 
-.ms-blue-section .ms-news-card-link {
+.ms-section--blue .ms-news-card-link {
     color: #e5e7eb;
 }
 
-.ms-blue-section .swiper-pagination-bullet {
+.ms-section--blue .swiper-pagination-bullet {
     background: #fff;
 }
 
-.ms-blue-section .swiper-pagination-bullet-active {
+.ms-section--blue .swiper-pagination-bullet-active {
     background: #acacac;
 }
 

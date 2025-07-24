@@ -1,4 +1,4 @@
-const homePreviewSwiper = new Swiper(".home-preview-swiper", {
+const homePreviewSwiper = new Swiper(".ms-home-preview-swiper", {
     slidesPerView: 1,
 
     spaceBetween: 167,
@@ -6,12 +6,12 @@ const homePreviewSwiper = new Swiper(".home-preview-swiper", {
     loop: true,
 
     navigation: {
-        nextEl: ".home-preview-swiper-button-next",
-        prevEl: ".home-preview-swiper-button-prev",
+        nextEl: ".ms-home-preview-swiper-button-next",
+        prevEl: ".ms-home-preview-swiper-button-prev",
     },
 });
 
-const homeNewsSwiper = new Swiper(".swiper-main-news", {
+const homeNewsSwiper = new Swiper(".ms-swiper-main-news", {
     slidesPerView: 3,
     initialSlide: 2,
 
@@ -22,17 +22,17 @@ const homeNewsSwiper = new Swiper(".swiper-main-news", {
     loopAdditionalSlides: 1,
 
     navigation: {
-        nextEl: ".swiper-main-news-button-next",
-        prevEl: ".swiper-main-news-button-prev",
+        nextEl: ".ms-swiper-main-news-button-next",
+        prevEl: ".ms-swiper-main-news-button-prev",
     },
 
     pagination: {
-        el: ".swiper-main-news-pagination",
+        el: ".ms-swiper-main-news-pagination",
         clickable: true,
     },
 });
 
-const homeArticlesSwiper = new Swiper(".swiper-main-articles", {
+const homeArticlesSwiper = new Swiper(".ms-swiper-main-articles", {
     slidesPerView: 3,
     initialSlide: 2,
 
@@ -42,17 +42,17 @@ const homeArticlesSwiper = new Swiper(".swiper-main-articles", {
     loop: true,
 
     navigation: {
-        nextEl: ".swiper-main-news-button-next",
-        prevEl: ".swiper-main-news-button-prev",
+        nextEl: ".ms-swiper-main-news-button-next",
+        prevEl: ".ms-swiper-main-news-button-prev",
     },
 
     pagination: {
-        el: ".swiper-main-news-pagination",
+        el: ".ms-swiper-main-news-pagination",
         clickable: true,
     },
 });
 
-const homeVideoSwiper = new Swiper(".swiper-main-video", {
+const homeVideoSwiper = new Swiper(".ms-swiper-main-video", {
     slidesPerView: 4,
     initialSlide: 2,
 
@@ -63,12 +63,12 @@ const homeVideoSwiper = new Swiper(".swiper-main-video", {
     loop: true,
 
     navigation: {
-        nextEl: ".swiper-main-video-button-next",
-        prevEl: ".swiper-main-video-button-prev",
+        nextEl: ".ms-ms-swiper-main-video-button-next",
+        prevEl: ".ms-ms-swiper-main-video-button-prev",
     },
 
     pagination: {
-        el: ".swiper-main-video-pagination",
+        el: ".ms-swiper-main-video-pagination",
         clickable: true,
     },
 });
@@ -76,7 +76,7 @@ const homeVideoSwiper = new Swiper(".swiper-main-video", {
 class HomePage {
     #videoModal = document.querySelector(".video-modal");
     #previewVideos = Array.from(
-        document.querySelectorAll(".home-preview__video")
+        document.querySelectorAll(".ms-home-preview-video")
     );
     #asides = document.querySelectorAll(".ms-aside ");
     #previewSection = document.querySelector(".ms-home-preview");
@@ -121,8 +121,8 @@ class HomePage {
             } else if (target.closest(".ms-modal-close")) {
                 this.#closeVideoModal(event);
             } else if (
-                target.closest(".home-preview-swiper-button-next") ||
-                target.closest(".home-preview-swiper-button-prev")
+                target.closest(".ms-home-preview-swiper-button-next") ||
+                target.closest(".ms-home-preview-swiper-button-prev")
             ) {
                 this.#changeActiveVideo();
             }
@@ -141,7 +141,7 @@ class HomePage {
 
     #changeActiveVideo() {
         const activeVideo = document.querySelector(
-            ".home-preview-swiper .swiper-slide-active"
+            ".ms-home-preview-swiper .swiper-slide-active"
         );
         const activeVideoIndex =
             activeVideo.getAttribute("aria-label").split(" / ")[0] - 1;

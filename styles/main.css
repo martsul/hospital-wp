@@ -104,6 +104,14 @@ body {
     color: #fff;
 }
 
+.ms-small-normal-bold-m {
+    font: 500 16px/1 var(--font-m);
+}
+
+.ms-white-f-opacity-font {
+    color: #FFFFFF80;
+}
+
 .ms-blue-transparent-btn {
     border: 1px solid var(--blue);
     padding: 25px;
@@ -427,4 +435,17 @@ body:has(.ms-modal.active) {
     max-height: calc(100% - 200px);
     height: 100%;
     max-width: 100%;
+}
+
+.ms-footer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.ms-footer-links {
+    display: flex;
+    gap: 15px;
 }

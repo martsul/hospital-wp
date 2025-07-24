@@ -74,6 +74,22 @@ const homeVideoSwiper = new Swiper(".swiper-main-video", {
 });
 
 const videoModal = document.querySelector(".ms-modal");
+const previewVideos = Array.from(document.querySelectorAll(".home-preview__video"));
+
+const startStopVideo = (activeVideoIndex) => {
+    const currentActiveVideo = previewVideos.find(v => v.classList.contains("active"));
+    currentActiveVideo?.pause();
+    currentActiveVideo?.classList?.remove("active");
+    previewVideos[activeVideoIndex]?.classList?.add("active");
+    previewVideos[activeVideoIndex]?.play();
+}
+startStopVideo(0);
+
+const changeActiveVideo = () => {
+    const activeVideo = document.querySelector(".home-preview-swiper .swiper-slide-active");
+    const activeVideoIndex = activeVideo.getAttribute("aria-label").split(" / ")[0] - 1;
+    startStopVideo(activeVideoIndex);
+}
 
 const closeVideoModal = (event) => {
     event.target.closest(".ms-modal")?.classList.remove("active");
@@ -84,9 +100,13 @@ const openVideoModal = () => {
 };
 
 document.body.addEventListener("click", (event) => {
-    if (event.target.closest(".ms-video-card")) {
+    const target = event.target
+
+    if (target.closest(".ms-video-card")) {
         openVideoModal();
-    } else if (event.target.closest(".ms-modal-close")) {
+    } else if (target.closest(".ms-modal-close")) {
         closeVideoModal(event);
+    } else if (target.closest(".home-preview-swiper-button-next") || target.closest(".home-preview-swiper-button-prev")) {
+        changeActiveVideo();
     }
 });

@@ -399,6 +399,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
 .ms-modal.active {
@@ -419,4 +420,11 @@ body:has(.ms-modal.active) {
 
 .ms-section-swiper {
     overflow: hidden;
+}
+
+.ms-video-modal-iframe {
+    aspect-ratio: 9 / 16;
+    max-height: calc(100% - 200px);
+    height: 100%;
+    max-width: 100%;
 }

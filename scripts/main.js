@@ -73,40 +73,75 @@ const homeVideoSwiper = new Swiper(".swiper-main-video", {
     },
 });
 
-const videoModal = document.querySelector(".ms-modal");
-const previewVideos = Array.from(document.querySelectorAll(".home-preview__video"));
+class HomePage {
+    #videoModal = document.querySelector(".video-modal");
+    #previewVideos = Array.from(
+        document.querySelectorAll(".home-preview__video")
+    );
 
-const startStopVideo = (activeVideoIndex) => {
-    const currentActiveVideo = previewVideos.find(v => v.classList.contains("active"));
-    currentActiveVideo?.pause();
-    currentActiveVideo?.classList?.remove("active");
-    previewVideos[activeVideoIndex]?.classList?.add("active");
-    previewVideos[activeVideoIndex]?.play();
-}
-startStopVideo(0);
-
-const changeActiveVideo = () => {
-    const activeVideo = document.querySelector(".home-preview-swiper .swiper-slide-active");
-    const activeVideoIndex = activeVideo.getAttribute("aria-label").split(" / ")[0] - 1;
-    startStopVideo(activeVideoIndex);
-}
-
-const closeVideoModal = (event) => {
-    event.target.closest(".ms-modal")?.classList.remove("active");
-};
-
-const openVideoModal = () => {
-    videoModal.classList.add("active");
-};
-
-document.body.addEventListener("click", (event) => {
-    const target = event.target
-
-    if (target.closest(".ms-video-card")) {
-        openVideoModal();
-    } else if (target.closest(".ms-modal-close")) {
-        closeVideoModal(event);
-    } else if (target.closest(".home-preview-swiper-button-next") || target.closest(".home-preview-swiper-button-prev")) {
-        changeActiveVideo();
+    constructor() {
+        this.#startStopVideo(0);
+        this.#initHandlers();
     }
-});
+
+    #initHandlers() {
+        document.body.addEventListener("click", (event) => {
+            const target = event.target;
+
+            if (target.closest(".ms-video-card")) {
+                this.#openVideoModal(target.closest(".ms-video-card"));
+            } else if (target.closest(".ms-modal-close")) {
+                this.#closeVideoModal(event);
+            } else if (
+                target.closest(".home-preview-swiper-button-next") ||
+                target.closest(".home-preview-swiper-button-prev")
+            ) {
+                this.#changeActiveVideo();
+            }
+        });
+    }
+
+    #startStopVideo(activeVideoIndex) {
+        const currentActiveVideo = this.#previewVideos.find((v) =>
+            v.classList.contains("active")
+        );
+        currentActiveVideo?.pause();
+        currentActiveVideo?.classList?.remove("active");
+        this.#previewVideos[activeVideoIndex]?.classList?.add("active");
+        this.#previewVideos[activeVideoIndex]?.play();
+    }
+
+    #changeActiveVideo() {
+        const activeVideo = document.querySelector(
+            ".home-preview-swiper .swiper-slide-active"
+        );
+        const activeVideoIndex =
+            activeVideo.getAttribute("aria-label").split(" / ")[0] - 1;
+        this.#startStopVideo(activeVideoIndex);
+    }
+
+    #closeVideoModal(event) {
+        event.target.closest(".ms-modal")?.classList.remove("active");
+        this.#videoModal.querySelector("iframe").remove()
+    }
+
+    #openVideoModal(slide) {
+        this.#createIframe(slide);
+        this.#videoModal.classList.add("active");
+    }
+
+    #createIframe(slide) {
+        const videoLink = this.#parseVideoLink(slide.dataset.link)
+        const iframe = document.createElement("iframe");
+        iframe.src = videoLink;
+        iframe.classList.add("ms-video-modal-iframe");
+        this.#videoModal.append(iframe);
+    }
+
+    #parseVideoLink(link) {
+        const id = link.split("=").slice(-1)[0];
+        return `https://www.youtube.com/embed/${id}`
+    }
+}
+
+new HomePage();

@@ -59,7 +59,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     position: relative;
-    top: -130px;
+    top: -200px;
 }
 
 .main-points__card {

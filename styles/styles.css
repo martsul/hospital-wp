@@ -38,13 +38,6 @@
     );
 }
 
-.ms-home-preview-border {
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    z-index: 1;
-}
-
 .ms-home-preview-swiper {
     overflow: hidden;
     padding: 0 167px;
@@ -187,55 +180,6 @@
 .ms-swiper-main-news,
 .ms-swiper-main-articles {
     padding: 0 40px;
-}
-
-.ms-main-helpful {
-    position: relative;
-    overflow: hidden;
-}
-
-.ms-main-helpful-background {
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translate(0, -50%);
-}
-
-.ms-main-helpful-cards {
-    display: flex;
-    justify-content: space-between;
-}
-
-.ms-main-helpful-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 25px;
-    gap: 15px;
-}
-
-.ms-main-helpful-text {
-    text-align: center;
-    max-width: 100px;
-}
-
-.ms-main-helpful-icon {
-    width: 70px;
-    height: 70px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background: var(--yellow);
-    border: 1px solid #fff;
-    box-shadow: 0px 4px 4px 0px #0000001a;
-    transition: transform 0.4s ease-out;
-}
-
-.ms-main-helpful-card:hover .ms-main-helpful-icon {
-    transform: rotateY(180deg);
 }
 
 .ms-news-card,

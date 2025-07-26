@@ -609,6 +609,8 @@ body:has(.ms-modal.active) {
     position: relative;
     top: -100px;
     z-index: 1;
+    gap: 12px;
+    display: flex;
 }
 
 .ms-shadow {
@@ -623,8 +625,8 @@ body:has(.ms-modal.active) {
     align-items: center;
     gap: 10px;
     padding-block: 17px;
-    padding-inline-start: 25px;
-    padding-inline-end: 44px;
+    padding-inline: 25px;
+    width: 100%;
 }
 
 .ms-search-input {
@@ -776,4 +778,243 @@ body:has(.ms-modal.active) {
     height: 90%;
     left: 0;
     bottom: 0;
+}
+
+.ms-select {
+    position: relative;
+    width: 100%;
+}
+
+.ms-select-choice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding: 25px;
+    padding-inline-start: 15px;
+    border: 1px solid var(--blue);
+    border-radius: 15px;
+    height: 55px;
+}
+
+.ms-select-result {
+    position: absolute;
+    top: calc(100% + 5px);
+    width: 100%;
+    border: 1px solid var(--blue);
+    border-radius: 15px;
+    background: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease;
+}
+
+.ms-select.active .ms-select-result {
+    opacity: 1;
+    visibility: visible;
+} 
+
+.ms-select-search {
+    padding: 20px 15px 15px;
+    border-bottom: 1px solid #B9B9B9;
+}
+
+.ms-select-search-container {
+    padding-block: 5px;
+    padding-inline: 10px;
+    border-radius: 15px;
+    border: 1px solid #acacac;
+    display: flex;
+    gap: 5px;
+}
+
+.ms-select-search-input {
+    width: 100%;
+    font: 400 14px/1 var(--font-m);
+}
+
+.ms-select-search-btn {
+    cursor: pointer;
+}
+
+.ms-select-variants {
+    display: flex;
+    flex-direction: column;
+}
+
+.ms-select-variant {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #F6F6F6;
+}
+
+.ms-select-variant-input {
+    display: none;
+}
+
+.ms-select-variant-custom-input {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #565656;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ms-select-variant-custom-input svg {
+    flex-shrink: 0;
+    opacity: 0;
+    transition: opacity .1s ease;
+}
+
+.ms-select-variant-input:checked + .ms-select-variant-custom-input svg {
+    opacity: 1;
+}
+
+.ms-select-btn {
+    margin: 15px auto;
+}
+
+.ms-btn--blue {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font: 400 16px/1 var(--font-n);
+    border-radius: 50px;
+    background: var(--blue);
+    padding: 10px 35px;
+}
+
+.ms-select-variant-text {
+    font: 400 16px/1 var(--font-n);
+}
+
+.ms-select-choice-button {
+    cursor: pointer;
+}
+
+.ms-doctors {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.ms-doctors-title {
+    color: var(--blue);
+    border-bottom: 3px solid var(--blue);
+    font: 800 40px/1 var(--font-n);
+    margin-bottom: 20px;
+}
+
+.ms-doctors-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.ms-doctor-card {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    justify-content: space-between;
+    background: #F6F6F6;
+    border-radius: 15px;
+    padding: 12px 18px;
+    transition: .2s ease;
+}
+
+.ms-doctor-card .ms-font-card-title {
+    transition: color .2s ease;
+}
+
+.ms-doctor-card:hover .ms-font-card-title {
+    color: var(--blue);
+}
+
+.ms-doctor-card:hover .ms-doctor-arrow {
+    background: var(--blue);
+}
+
+.ms-doctor-card .ms-doctor-arrow svg {
+    transition: .2s ease;
+}
+
+.ms-doctor-card:hover .ms-doctor-arrow svg {
+    fill: #fff;
+}
+
+.ms-doctor-img-container {
+    position: relative;
+    width: max-content;
+}
+
+.ms-doctor-img-container svg {
+    position: absolute;
+    width: 110%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ms-doctor-img {
+    position: relative;
+}
+
+.ms-doctor-texts {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ms-font-card-title {
+    font: 700 26px/1 var(--font-m);
+}
+
+.ms-font--blue {
+    color: var(--blue);
+}
+
+.ms-font--grey {
+    color: #565656;
+}
+
+.ms-doctor-arrow {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s ease;
+}
+
+.ms-doctor-arrow svg {
+    flex-shrink: 0;
+    fill: var(--blue);
+}
+
+.ms-doctor-btn {
+    margin: 0 auto;
+}
+
+.ms-btn--transparent-blue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    font: 400 16px/1 var(--font-n);
+    width: max-content;
+    padding: 10px 25px;
 }
